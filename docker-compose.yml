@@ -1,0 +1,12 @@
+
+services:
+  remanent-api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./labels:/app/labels
+      - ./data:/app/data
+    environment:
+      - DATABASE_URL=sqlite:///./data/remanent.db
+      - LABEL_OUTPUT_DIR=./labels
